@@ -1,6 +1,6 @@
 package com.libraryapp.eventlibrary.controller
 
-import com.examplekafka.libraryeventsproducer.domain.LibraryEvent
+import com.libraryapp.eventlibrary.domain.LibraryEvent
 import com.libraryapp.eventlibrary.producer.LibraryEventProducer
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus

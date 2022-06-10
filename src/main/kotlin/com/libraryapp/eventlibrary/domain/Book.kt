@@ -1,7 +1,7 @@
-package com.examplekafka.libraryeventsproducer.domain
+package com.libraryapp.eventlibrary.domain
 
 data class Book (
-    private val bookId: Integer,
+    private val bookId: Int,
     private val bookName: String,
     private val bookAuthor: String
 

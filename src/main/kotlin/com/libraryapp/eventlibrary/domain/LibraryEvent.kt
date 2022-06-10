@@ -1,6 +1,6 @@
-package com.examplekafka.libraryeventsproducer.domain
+package com.libraryapp.eventlibrary.domain
 
 data class LibraryEvent (
-    var libraryEventId: Integer,
+    var libraryEventId: Int,
     var book: Book
 )

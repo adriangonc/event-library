@@ -1,26 +1,20 @@
 package com.libraryapp.eventlibrary.producer
 
-import com.examplekafka.libraryeventsproducer.domain.LibraryEvent
-import org.apache.kafka.clients.producer.RecordMetadata
+import com.libraryapp.eventlibrary.domain.LibraryEvent
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
 import org.springframework.kafka.core.KafkaTemplate
 import org.springframework.kafka.support.SendResult
-import org.springframework.util.concurrent.ListenableFuture
-import org.springframework.util.concurrent.ListenableFutureCallback
-import reactor.core.publisher.Mono
 import java.util.*
-import java.util.concurrent.CompletableFuture
-import java.util.concurrent.Future
 
 @Component
 class LibraryEventProducer {
     @Autowired
-    constructor(kafkaTemplate: KafkaTemplate<Integer, String>) {
+    constructor(kafkaTemplate: KafkaTemplate<Int, String>) {
         this.kafkaTemplate = kafkaTemplate
     }
 
-    var kafkaTemplate: KafkaTemplate<Integer, String>? = null;
+    var kafkaTemplate: KafkaTemplate<Int, String>? = null;
     val topic: String = "library-events"
 
     public fun sendLibraryEvent(libraryEvent: LibraryEvent): Unit? {
@@ -50,7 +44,7 @@ class LibraryEventProducer {
 
     private fun handleSuccess(
         value: String,
-        it: SendResult<Integer, String>?
+        it: SendResult<Int, String>?
     ) {
         println(
             "Sent message=[" + value +
